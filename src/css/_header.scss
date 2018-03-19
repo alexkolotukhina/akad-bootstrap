@@ -1,5 +1,6 @@
 .header-main {
-	
+	background: url('../img/Group 1.jpg'); 
+	background-size: cover;
 }
 .header-logo {
 	font-family: 'Montserrat', sans-serif;
@@ -16,6 +17,43 @@
 }
 .header-top {
 	height: 100px;
+}
+.header-text {
+	padding-bottom: 30px;
+	position: relative;
+	margin-bottom: 20px;
+
+	@include _media(md) {
+		margin-bottom: 115px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 30px;
+		margin-bottom: 20px;
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: -50px;
+		right: 50%;
+		transform: translateX(50%);
+
+		@include _media(md) {
+			transform: none;
+			right: 0;
+		}
+
+	}
+
+	&__img {
+		@include _media(md) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}	
+	}
 }
 
 .nav-icon {
@@ -76,6 +114,40 @@
 	}
 
 }
+.header-title {
+	padding: 125px 0;
+	text-align: center;
+
+	&__title {
+		text-transform: uppercase;
+		border: 10px solid;
+		padding: 15px;
+		line-height: 1;
+		font-size: 30px;
+
+		@include _media(md) {
+			font-size: 48px;
+		}
+	}
+
+	&__subtitle {
+		display: inline-block;
+		background: $color_green;
+		line-height: 30px;
+		height: 30px;
+		padding: 0 20px;
+		font-family: 'Montserrat', sans-serif;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		padding-top: 25px;
+		margin: 0;
+	}
+
+}
+
+
 .header-section {
 	height: 500px;
 	background: url('../img/bg.jpg');

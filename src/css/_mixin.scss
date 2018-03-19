@@ -1,0 +1,24 @@
+@mixin _media ($screen) {
+	@if ($screen == 'sm') {
+		@media screen and (min-width: 576px) {
+			@content;
+		}
+	} @if ($screen == 'md') {
+		@media screen and (min-width: 768px) {
+			@content;
+		}
+	} @if ($screen == 'lg') {
+		@media screen and (min-width: 992px) {
+			@content;
+		}
+	} @if ($screen == 'xl') {
+		@media screen and (min-width: 1200px) {
+			@content;
+		}
+	}
+}
+
+/*ion-ios-settings
+ion-ios-infinite-outline
+ion-ios-shuffle
+ion-ios-cart-outline*/
