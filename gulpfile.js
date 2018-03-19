@@ -26,13 +26,15 @@ var paths= {
 		css: "docs/css/",
 		html: "docs/",
 		images: "docs/img/",
-		js: "docs/js/"
+		js: "docs/js/",
+		fonts: "docs/fonts/"
 	},
 	watch: {
 		css: "src/css/**/*.scss",
 		html: "src/**/*.html",
 		images: "src/img/**/*.*",
-		js: "src/**/*.js"
+		js: "src/**/*.js",
+		fonts: "src/fonts/**/*.*"
 	},
 	bootstrap: './node_modules/bootstrap/dist/js/',
 	jquery: './node_modules/jquery/dist/',
@@ -79,6 +81,12 @@ gulp.task('images', function () {
 		.pipe(reload({stream: true}));
 });
 
+gulp.task('fonts', function () {
+	gulp.src(paths.src.fonts)
+	.pipe(gulp.dest(paths.dest.fonts))
+	.pipe(reload({stream: true}));
+})
+
 gulp.task('js', function () {
 	gulp.src(paths.src.js_main)
 		.pipe(include({
@@ -122,6 +130,9 @@ gulp.task('watch', function() {
 	gulp.watch([paths.watch.js], function(event, cb){
 		gulp.start('js');
 	});
+	gulp.watch([paths.watch.fonts], function(event, cb){
+		gulp.start('fonts');
+	});
 });
 
 gulp.task('refresh', function(){
@@ -137,7 +148,8 @@ gulp.task('build', [
 	'html', 
 	'css',
 	'images',
-	'js'
+	'js',
+	'fonts'
 ]);
 
 gulp.task('default', ['build', 'refresh', 'watch']);
