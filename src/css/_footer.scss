@@ -1,0 +1,151 @@
+.footer {
+	background-color: $color_green;
+
+	&__top {
+		padding-top: 38px;
+		padding-bottom: 50px;
+	}
+
+	&__title {
+		font-size: 30px;
+		line-height: 48px;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin: 0 0 25px;
+
+	}
+
+	&__info {
+		background-color: #fff;
+		padding: 15px 25px 18px;
+		margin-top: 12px;
+
+		h3 {
+			font-size: 24px;
+			line-height: 36px;
+			margin: 0;
+		}
+		p {
+			font-size: 16px;
+			line-height: 24px;
+			color: #999999;
+			margin: 0;
+		}
+	}
+
+	&__form {
+		flex-wrap: wrap;
+
+		input {
+			display: inline-block;
+			font-size: 12px;
+			text-transform: uppercase;
+			height: 50px;
+			line-height: 50px;
+			border: 1px solid transparent;
+			margin-top: 1rem;
+
+			&[type=email] {
+				flex-grow: 1;
+				padding: 0 20px;
+				border-color: #e5e5e5;
+				vertical-align: middle;
+			}
+			&[type=submit] {
+				padding: 0 50px;
+				background-color: $color_green;
+				border-color: $color_green;
+				vertical-align: middle;
+				color: #fff;
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+
+				&:hover {
+					background-color: #fff;
+					color:  $color_green;
+				}
+			}
+		}
+	}
+	
+	&__bottom {
+		background-color: #fff;
+		padding-top: 20px;
+		padding-bottom: 15px;
+		
+		@media screen and (min-width: 1024px) {
+			padding-top: 45px;
+			padding-bottom: 45px;
+		}
+
+	}
+	
+	&__autor {
+		padding: 0;
+		font-size: 14px;
+		color: #9a9a9a;
+		text-transform: uppercase;
+		text-align: right;
+	}	
+
+	&__social {
+		color: #999;
+		font-size: 18px;
+		text-align: right;
+
+		& i:hover {
+			color: $color_green;
+		}
+
+		& i:not(:first-child) {
+			margin-left: 15px;
+		}
+	}
+}
+.nav {
+	flex-direction: column;
+	
+	@media screen and (min-width: 1024px) {
+		flex-direction: row;
+		margin-left: -15px;
+	}
+
+	&-item {
+
+		@media screen and (min-width: 1024px) {
+			padding: 0 15px;
+			position: relative;
+
+			&:not(:last-child) a:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: -2px;
+				width: 5px;
+				height: 1px;
+				background-color: #9a9a9a;
+			}
+		
+		}
+	}
+
+	&-link {
+		padding: 0;
+		font-size: 14px;
+		color: #9a9a9a;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $color_green;
+		}
+	}
+}
+
+
+
+
+
+
+
+

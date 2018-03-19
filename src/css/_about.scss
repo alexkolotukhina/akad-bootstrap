@@ -1,0 +1,131 @@
+.about {
+	padding-bottom: 40px;
+
+	@media screen and (min-width: 1024px) {
+		padding-bottom: 140px;
+	}
+}
+
+.benefits {
+
+	&-title {
+		line-height: 40px;
+		font-size: 18px;
+		text-transform: uppercase;
+
+		span {
+			display: inline-block;
+			color: #fff;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			font-size: 30px;
+			background-color: $color_green;
+			vertical-align: middle;
+			margin-right: 20px;
+		}
+	}
+}
+
+.team {
+
+	&-item {
+		margin-bottom: 30px;
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: 263px;
+		}
+	}
+
+	&-info {
+		background-color: #efeff0;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		width: 100%;
+		margin: 0 15px;
+		
+		p {
+			font-style: italic;
+			line-height: 50px;
+			margin: 0;
+		}
+	}
+
+	&-btn {
+		text-align: right;
+	}
+}
+
+.carousel {
+
+	&-indicators {
+		bottom: -10px;
+
+		.active {
+			background-color: $color_green;
+			width: 30px;
+		}
+
+		li {
+			background-color: $color_main;
+			width: 15px;
+			height: 5px;
+		}
+		
+	}
+
+	&-item {
+	text-align: center;
+	padding-bottom: 35px;
+
+		img {
+			width: 82px;
+			height: 82px;
+			border-radius: 50%;
+		}
+	}
+}
+.slide-text {
+	margin: 25px 0;
+	font-size: 14px;
+	line-height: 30px;
+}
+.partner {
+
+	&-main {
+		justify-content: center;
+
+		@media screen and (min-width: 1200px) {
+			justify-content: space-between;
+		}
+	}
+
+	&-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100px;
+		flex-basis: 155px;
+		min-width: 145px;
+		border: 1px solid  $color_main;
+		margin: 15px;
+
+		&:hover img {
+			transform: scale(1.1);
+			transition: transform .4s ease-out;
+		}
+
+	}
+}
+
+
+
+
+
+
+
