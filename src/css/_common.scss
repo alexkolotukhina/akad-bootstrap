@@ -27,6 +27,7 @@ img {
 	text-transform: uppercase;
 	padding: 0 30px;
 	border-radius: 0;
+	min-width: 165px;
 
 	&--white {
 		background-color: #fff;
@@ -60,7 +61,7 @@ img {
 .section {
 	padding-top: 40px;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1200px) {
 		padding-top: 150px;
 	}
 }
@@ -107,5 +108,19 @@ img {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 30px;
+}
+
+.social {
+	color: #999;
+	font-size: 18px;
+	text-align: right;
+
+	& i:hover {
+		color: $color_green;
+	}
+
+	& i:not(:first-child) {
+		margin-left: 15px;
+	}
 }
 

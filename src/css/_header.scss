@@ -23,7 +23,7 @@
 	position: relative;
 	margin-bottom: 20px;
 
-	@include _media(md) {
+	@include _media(xl) {
 		margin-bottom: 115px;
 	}
 
