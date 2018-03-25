@@ -1,0 +1,41 @@
+.section-what {
+	@include make-container();
+	@include make-container-max-widths();
+
+	&__text {
+		@include make-col-ready();
+		@include make-col(6);
+
+		p {
+			font-size: 14px;
+			line-height: 30px;
+			letter-spacing: -.01em;
+		}
+	}
+
+	&__img {
+		@include make-col-ready();
+		@include make-col(6);
+	}
+
+	&__list {
+		column-count: 2;
+		column-gap: 40px;
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			position: relative;
+			font-size: 14px;
+			line-height: 30px;
+
+			&:before {
+				content: "\f374";
+				display: inline-block;
+				padding-right: 10px;
+				font-family: "Ionicons";
+				color: $color_green;
+			}
+		}
+	}
+}

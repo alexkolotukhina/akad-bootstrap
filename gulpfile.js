@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
+	sourcemaps = require('gulp-sourcemaps'),
 	prefixer = require('gulp-autoprefixer'),
 	watch = require('gulp-watch'),
 	browserSync = require('browser-sync'),
@@ -38,17 +39,20 @@ var paths= {
 	},
 	bootstrap: './node_modules/bootstrap/dist/js/',
 	jquery: './node_modules/jquery/dist/',
-	slick: './node_modules/slick-carousel/slick/'
+	slick: './node_modules/slick-carousel/slick/',
+	isotope: './node_modules/isotope-layout/dist/'
 }
 
 gulp.task('css', function(){
 	gulp.src(paths.src.css)
+		.pipe(sourcemaps.init())
 		.pipe(sass({
 			outputStyle: 'compressed',
 			sourceMap: true,
 			errorToConsole: true
 		}))
 		.pipe(prefixer())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.dest.css))
 		.pipe(reload({stream: true}))
 });
@@ -92,7 +96,7 @@ gulp.task('js', function () {
 		.pipe(include({
 				extensions: "js",
 				hardFail: true,
-				includePaths: [paths.slick, paths.bootstrap, paths.jquery, paths.src.js]
+				includePaths: [paths.isotope, paths.slick, paths.bootstrap, paths.jquery, paths.src.js]
 			}).on('error', notify.onError(
 					{
 						message: "<%= error.message %>",
@@ -101,14 +105,14 @@ gulp.task('js', function () {
 				)
 			)
 		)
-		.pipe(uglify().on('error', notify.onError(
+		/*.pipe(uglify().on('error', notify.onError(
 						{
 							message: "<%= error.message %>",
 							title  : "JS Error!"
 						}
 					)
 				)
-			)
+			)*/
 		.pipe(gulp.dest(paths.dest.js))
 		//.pipe(notify({ message: 'JS task complete', sound: false, onLast: true }))
 		.pipe(reload({stream: true}));

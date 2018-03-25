@@ -1,0 +1,106 @@
+.contact {
+	padding-bottom: 50px;
+	
+		@include _media(lg) {
+			padding-bottom: 150px;
+		}
+
+
+	&-form {
+		display: flex;
+		flex-wrap: wrap;
+
+
+		input, textarea {
+			background-color: #fefcf9;
+			outline: none;
+			border: none;
+			margin-bottom: 30px;
+			width: 100%;
+			padding: 0 15px;
+			line-height: 48px;
+		}
+
+		input {
+			height: 50px;
+		}
+		.line-1 {
+			
+			@media screen and (min-width: 768px) {
+				width: 47.5%;
+
+				&:first-child {
+					margin-right: 5%;
+				}
+			}
+		}
+
+		textarea {
+			height: 200px;
+			resize: none;
+		}
+		::-webkit-input-placeholder {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+		    font-size: 12px;
+		    line-height: 48px;
+		    text-transform: uppercase;
+		}
+		::-moz-placeholder {
+		  	font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+		    font-size: 12px;
+		    line-height: 48px;
+		    text-transform: uppercase;
+		}
+		:-ms-input-placeholder {
+		  	font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+		    font-size: 12px;
+		    line-height: 48px;
+		    text-transform: uppercase;
+		}
+		:-moz-placeholder {
+		  	font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+		    font-size: 12px;
+		    line-height: 48px;
+		    text-transform: uppercase;
+		}
+	}
+	
+	&-text {
+		margin-top: 40px;
+
+			@include _media(lg) {
+				margin-top: 80px;
+			}
+
+		p {
+			font-size: 14px;
+			margin: 0;
+		}
+		&__title {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 18px;
+			text-transform: uppercase;
+			margin-bottom: 25px;
+		}
+		p.contact-text__info {
+			margin-bottom: 20px;
+		}
+		&__email {
+			font-weight: 700;
+		}
+		.social {
+			text-align: left;
+			margin-top: 20px;
+		}
+	}
+	#map {
+		height: 785px;
+	}
+	
+	
+
+}
