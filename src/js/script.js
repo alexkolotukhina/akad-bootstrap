@@ -3,16 +3,41 @@
 // to inlude plugins add "=" sign below
 //=require bootstrap.min.js
 // require slick.min.js 
+//=require isotope.pkgd.min.js
+
 
 ;(function($){
+
+	var $portfolio__grid;
 
 	$(document).ready(function(){
 		$('.carousel').carousel({
 		  interval: 2000
 		})
+
+
+		$('.portfolio__cat-item > a').on('click', function(evt) {
+			evt.preventDefault();
+
+			var filterValue = $(this).data('filter');
+		  	$portfolio__grid.isotope({ filter: filterValue });
+
+			$('.portfolio__cat-item > a').removeClass('active');
+			$(this).addClass('active');
+		})
 	});
 
 	$(window).on('load', function(){
+
+		$portfolio__grid = $('.portfolio__grid').isotope({
+		  // set itemSelector so .grid-sizer is not used in layout
+		  itemSelector: '.portfolio__item',
+		  percentPosition: true,
+		  masonry: {
+		    // use element for option
+		    columnWidth: '.portfolio__sizer'
+		  }
+		})
 
 		var map; 
 
