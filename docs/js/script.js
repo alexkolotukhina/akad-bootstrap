@@ -44,6 +44,16 @@ return u&&this.options.isJQueryFiltering?function(e){return u(e.element).is(t)}:
 			$('.portfolio__cat-item > a').removeClass('active');
 			$(this).addClass('active');
 		})
+
+		$('.blog-posts__link').on('click', function(evt) {
+			evt.preventDefault();
+
+			$('.blog-posts__link').removeClass('blog-active');
+			$(this).addClass('blog-active');
+
+			$('.blog-posts__page').hide();
+			$( $(this).attr('href') ).show();
+		});
 	});
 
 	$(window).on('load', function(){
