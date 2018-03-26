@@ -9,6 +9,10 @@ body {
 a {
 	transition: all ease .5s;
 	color: inherit;
+
+	&:hover {
+		color: $color_main;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -123,4 +127,58 @@ img {
 		margin-left: 15px;
 	}
 }
+.search {
+	position: relative;
+	height: 40px;
+	line-height: 40px;
 
+		input {
+			background-color: #ececec;
+			width: 100%;
+			border: none;
+			padding: 0 40px 0 15px;
+
+			&::-webkit-input-placeholder {
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			    font-size: 12px;
+			    line-height: 48px;
+			    text-transform: uppercase;
+			}
+			&::-moz-placeholder {
+			  	font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			    font-size: 12px;
+			    line-height: 40px;
+			    text-transform: uppercase;
+			}
+			&:-ms-input-placeholder {
+			  	font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			    font-size: 12px;
+			    line-height: 40px;
+			    text-transform: uppercase;
+			}
+			&:-moz-placeholder {
+			  	font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+			    font-size: 12px;
+			    line-height: 40px;
+			    text-transform: uppercase;
+			}
+		}
+		button {
+			position: absolute;
+			top: 0;
+			right: 5px;
+			border: none;
+			background-color: transparent;
+			color: $color_main;
+			font-family: "Ionicons";
+			font-size: 18px;
+			outline: none;
+		}
+}
+.hide {
+	display: none;
+}
