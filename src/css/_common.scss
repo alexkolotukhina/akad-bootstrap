@@ -61,6 +61,11 @@ img {
 			font-size: 14px;
 		}
 	}
+
+	&--card {
+		height: 30px;
+		line-height: 30px;
+	}
 }
 .section {
 	padding-top: 40px;
@@ -87,7 +92,7 @@ img {
 		height: 20px;
 		background-color: $color_green;
 		left: -1px;
-		bottom: 0;
+		top: 18px;
 		z-index: -1;
 	}
 

@@ -4,7 +4,11 @@
 
 	&__text {
 		@include make-col-ready();
-		@include make-col(6);
+		@include make-col(12);
+
+		@include media-breakpoint-up(lg) {
+	    	@include make-col(6);
+	  	}
 
 		p {
 			font-size: 14px;
@@ -15,7 +19,12 @@
 
 	&__img {
 		@include make-col-ready();
-		@include make-col(6);
+		@include make-col(12);
+		text-align: center;
+
+		@include media-breakpoint-up(lg) {
+	    	@include make-col(6);
+	  	}
 	}
 
 	&__list {
@@ -27,7 +36,7 @@
 		li {
 			position: relative;
 			font-size: 14px;
-			line-height: 30px;
+			margin-bottom: 15px;
 
 			&:before {
 				content: "\f374";
@@ -38,4 +47,119 @@
 			}
 		}
 	}
+}
+.section-highlights {
+	@include make-container();
+	@include make-container-max-widths();
+
+	&__item {
+		@include make-col-ready();
+		@include make-col(6);
+		text-align: center;
+
+		@include media-breakpoint-up(lg) {
+	    	@include make-col(3);
+	  	}
+	}
+
+	&__icon {
+		font-size: 60px;
+		font-family: "Ionicons";
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 50px;
+			height: 20px;
+			background-color: $color_green;
+			left: -5px;
+			bottom: 6px;
+			z-index: -1;
+		}
+	}
+
+	&__title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 18px;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 30px;
+	}
+}
+
+.section-plans {
+	@include make-container();
+	@include make-container-max-widths();
+	padding-bottom: 40px;
+
+	@include media-breakpoint-up(lg) {
+    	padding-bottom: 110px;
+  	}
+
+	&__card {
+		@include make-col-ready();
+		@include make-col(12);
+		margin: auto;
+
+		@include media-breakpoint-up(sm) {
+	    	@include make-col(6);
+	  	}
+
+		@include media-breakpoint-up(lg) {
+	    	@include make-col(4);
+	  	}
+	  	h3 {
+	  		text-transform: uppercase;
+	  		font-size: 30px;
+	  		margin-bottom: 15px;
+	  	}
+
+	  	ul {
+	  		margin: 40px 0;
+	  		padding-left: 0;
+			list-style: none;
+
+			li {
+			position: relative;
+			font-size: 14px;
+			margin-bottom: 15px;
+
+				&:before {
+					content: "\f374";
+					display: inline-block;
+					padding-right: 10px;
+					font-family: "Ionicons";
+					color: $color_green;
+				}
+			}
+	  	}
+
+	}
+
+	&__inner {
+		border-top: 5px solid $color_green;
+		position: relative;
+		padding: 30px 30px 40px;
+		transition: box-shadow .4s;
+
+		&:hover {
+			box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.4);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: 5px solid transparent;
+			border-top-color: $color_green;
+			border-right-color: $color_green;
+		}
+	}
+
 }

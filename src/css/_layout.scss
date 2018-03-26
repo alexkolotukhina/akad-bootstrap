@@ -4,8 +4,7 @@
 .section-title-wrapper {
 	text-align: center;
 	@include make-col-ready();
-	@include make-col(10);
-    @include make-col-offset(1);
+	@include make-col(12);
 
   	@include media-breakpoint-up(lg) {
     	@include make-col(8);
