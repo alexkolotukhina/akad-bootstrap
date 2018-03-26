@@ -1,7 +1,11 @@
 .blog {
 	@include make-container();
 	@include make-container-max-widths();
-	padding-bottom: 150px;
+	padding-bottom: 50px;
+
+	@include _media(md) {
+		padding-bottom: 150px;
+	}
 
 	
 	&-row {
@@ -12,14 +16,18 @@
 		@include make-col-ready();
 		@include make-col(12);
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 	    	@include make-col(8);
 	  	}
 	}
 	&-item {
 
 		&:not(:first-child) {
-			margin-top: 100px;
+			margin-top: 40px;
+
+			@include _media(md) {
+				margin-top: 100px;
+			}
 		}
 		
 		img {
@@ -74,10 +82,12 @@
 		margin-bottom: 25px;
 	}
 	&-next {
+		display: inline-block;
 		font-family: 'Montserrat', sans-serif;
 		font-size: 14px;
 		text-transform: uppercase;
 		font-weight: 700;
+		margin-bottom: 10px;
 
 		&:after {
 			content: "\f10b";
@@ -90,11 +100,11 @@
 		@include make-col-ready();
 		@include make-col(12);
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 		    @include make-col(4);
 		}
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 		    @include make-col(3);
 		    @include make-col-offset(1);
 		}
@@ -125,8 +135,15 @@
 	&-posts {
 		margin-top: 45px;
 
+
 		&__top {
+			display: flex;
+			justify-content: space-between;
 			
+			@include _media(md) {
+				justify-content: flex-start;
+			}
+
 		}
 
 		&__link {
@@ -139,7 +156,7 @@
 		font-weight: 700;
 		color: #999;
 		padding: 0 12px;
-		margin: 0 -2px 30px;
+		margin: 0 0 30px;
 		border-bottom: 2px solid #e6e6e6;
 
 			&:hover {
@@ -150,12 +167,14 @@
 		}
 
 		&__item {
-			height: 80px;
 			display: flex;
-			flex-wrap: wrap;
 			align-items: center;
 			overflow: hidden;
 			margin-bottom: 15px;
+
+			@include _media(md) {
+				flex-wrap: wrap;
+			}
 
 			img {
 				width: 80px;
@@ -163,8 +182,11 @@
 		}
 
 		&__text {
-			flex-basis: 155px;
 			margin-left: 15px;
+
+			@include _media(lg) {
+				flex-basis: 155px;
+			}
 		}
 
 		&__data {
